@@ -1,0 +1,60 @@
+﻿@{
+    ViewBag.Title = "Login";
+
+}
+
+<html class="no-js bgColor" ng-app="smEasyModule" ng-cloak>
+<head>
+    <meta charset="utf-8">
+    <title>Login</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    @*<meta content="width=device-width, initial-scale=1" name="viewport">*@
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <meta content="" name="description">
+    <meta content="" name="author">
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+    <link href="~/Scripts/angular-ui-grid/ui-grid.bootstrap.css" rel="stylesheet" />
+    <link href="~/Scripts/angular-ui-grid/ui-grid.css" rel="stylesheet" />
+    <link href="~/Content/app.css" rel="stylesheet" />
+    <link href="~/Content/plugins/global/css/sweet-alert.css" rel="stylesheet" />
+    <link href="~/Scripts/angularjs-toaster/toaster.css" rel="stylesheet" />
+    <link href="~/Content/kendo/theme/kendo.common.min.css" rel="stylesheet" />
+    <link href="~/Content/kendo/theme/blueopal/kendo.blueopal.min.css" rel="stylesheet" />
+</head>
+<body>
+    @*<div class="no-js htmlColor" ng-app="smEasyModule" ng-cloak>*@
+    <div class="page-content-wrapper bgColor">
+        <div class="container" id="mydiv">
+            <img src="~/Content/uibuttons/blueOpal/preloader/Blueopal.GIF" class="ajax-loader" />
+        </div>
+        <div class="container" ng-view ng-cloak>
+
+        </div>
+    </div>
+     
+    <script src="~/Scripts/jquery/jquery-1.11.3.min.js"></script>
+
+    <!-- Latest compiled and minified JavaScript -->
+    @Scripts.Render("~/bundles/angularJs")
+    @Scripts.Render("~/bundles/pagescripts")
+    <script src="~/Scripts/angular-ui-grid/ui-grid.js"></script>
+    <script src="~/Scripts/common/sweet-alert.min.js"></script>
+    <script src="~/Scripts/angularjs-toaster/toaster.js"></script>
+    <script src="~/Scripts/angularjs-toaster/logger.js"></script>
+
+
+    <script src="~/Scripts/pageScripts/Login/contactController.js"></script>
+
+
+
+    <!-- Kendo UI core region -->
+
+    <script src="~/Content/kendo/all/kendo.all.min.js"></script>
+    <script src="~/Content/kendo/all/angular-kendo.min.js"></script>
+</body>
+</html>
+
+
+
+
+

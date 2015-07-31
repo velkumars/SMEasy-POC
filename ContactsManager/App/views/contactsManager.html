@@ -1,0 +1,122 @@
+﻿<div class="container">
+    <div class="col-md-12" ng-cloak>
+        <br />
+        <div class="row">
+            <div class="col-md-9">
+                <div class="FlexDiv">
+                    <span ng-repeat="button in actionButton | orderBy:'sequencenumber'">
+                        <span ng-if="button.isdefault">
+                            <xen-button class="{{button.controlname}}" id="{{button.controlname}}" name="{{button.title}}" ng-click="actionButtonClick(button.controlname)" title="{{button.tooltip}}" ng-show="!show"></xen-button>
+                        </span>
+                        <span ng-if="!button.isdefault">
+                            <xen-button class="{{button.controlname}}" id="{{button.controlname}}" name="{{button.title}}" ng-click="actionButtonClick(button.controlname)" title="{{button.tooltip}}" ng-show="show"></xen-button>
+                        </span>
+                    </span>
+
+                </div>
+            </div>
+        </div>
+        <div class="divHeight"></div>
+        <div ng-hide="show">
+            <div style="height:300px !important; width: 1107px; overflow:auto;" ui-grid="PrimaryEntityList"
+                 ui-grid-pagination
+                 ui-grid-selection></div>
+        </div>
+
+        <form name="contactForm" ng-cloak>
+            <div ng-show="show">
+                <div ng-repeat="error in validationErrors" class="validation-summary-errors">
+                    <ul>
+                        <li>{{error.ErrorMessage}}</li>
+                    </ul>
+                </div>
+
+                <div class="portlet lightgrey" disable-contents="disabled">
+                    <div class="panel panel-default">
+                        <div class="panel-heading h3 strong">
+                            Contact Information
+                        </div>
+                        <div class="panel-body backgroud">
+                            <br />
+
+                            <div class="row">
+                                <label class="col-md-3 control-label">First Name</label>
+                                <div class="input-group col-md-6">
+                                    <div class="required-field-block">
+                                        <input type="text" class="form-control" name="firstName" ng-model="model.FirstName" placeholder="First Name" maxlength="100"
+                                               title="Required field" data-toggle="tooltip" required focus-if="show" />
+                                    </div>
+                                </div>
+                            </div>
+                            <br />
+                            <div class="row">
+                                <label class="col-md-3 control-label">Last Name</label>
+                                <div class="input-group col-md-6">
+                                    <div class="required-field-block">
+                                        <input type="text" class="form-control" name="lastName" ng-model="model.LastName" placeholder="Last Name" maxlength="100"
+                                               title="Required field" data-toggle="tootip" required />
+
+                                    </div>
+
+                                </div>
+                            </div>
+                            <br />
+                            <div class="row">
+                                <label class="col-md-3 control-label">Email</label>
+                                <div class="input-group col-md-6">
+                                    <input type="email" class="form-control" name="email" ng-model="model.Email" placeholder="Email" maxlength="100"
+                                           title="Required field" data-toggle="tootip" required />
+                                    <span ng-show="contactForm.email.$dirty && contactForm.email.$invalid"></span>
+                                    <span ng-show="contactForm.email.$error.email" class="invalidEmail"> Invalid Email Address</span>
+                                </div>
+                            </div>
+                            <br />
+                            <div class="row">
+                                <label class="col-md-3 control-label">Cell Phone</label>
+                                <div class="input-group col-md-6">
+                                    <div class="required-field-block">
+                                        <input type="text" class="form-control" name="cellPhone" ng-model="model.Cellphone" placeholder="Cell Phone" maxlength="10"
+                                               title="Required field" data-toggle="tootip" required numeric />
+                                    </div>
+
+                                </div>
+                            </div>
+                            <br />
+
+                            <div class="row">
+                                <label class="col-md-3 control-label">Is Active</label>
+                                <div class="checkbox">
+                                    <label class="i-checks i-checks-sm">
+                                        <input type="checkbox" name="isActive" ng-model="model.IsActive"><i></i>
+                                    </label>
+                                   
+                                </div>
+                            </div>
+
+                            <br />
+
+                            <div class="row">
+                                <label class="col-md-3 control-label">Born</label>
+                                <div class="input-group col-md-6">
+                                    <div class="required-field-block">
+                                        <input kendo-date-picker
+                                               k-options="datePickerOptions"
+                                               ng-model="model.Born"
+                                               k-ng-model="model.Born"
+                                               placeholder="Date of Birth"
+                                               required />
+
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </form>
+        </div>
+</div>
+<style>
+
+</style>
